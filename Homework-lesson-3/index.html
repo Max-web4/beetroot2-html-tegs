@@ -1,9 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>Список покупок</h1>
+    </header>
+    <form action="./postform.php" method="POST">
+      <fieldset>
+        <legend>Отметить купленое</legend>
+        <ol>
+          <label ng-repeat="Яблоко in fruits">
+            <input
+              type="checkbox"
+              name="selectedFruits[]"
+              value="{{Яблоко}}"
+              ng-checked="selection.indexOf(Яблоко) > -1"
+              ng-click="toggleSelection(Яблоко)"
+            />
+            {{Яблоко}}
+            <br />
+            <hr />
+          </label>
+          <label ng-repeat="Груша in fruits">
+            <input
+              type="checkbox"
+              name="selectedFruits[]"
+              value="{{Груша}}"
+              ng-checked="selection.indexOf(Груша) > -1"
+              ng-click="toggleSelection(Груша)"
+            />
+            {{Груша}}
+          </label>
+          <br />
+          <hr />
+          <label ng-repeat="Арбуз in fruits">
+            <input
+              type="checkbox"
+              name="selectedFruits[]"
+              value="{{Арбуз}}"
+              ng-checked="selection.indexOf(Арбуз) > -1"
+              ng-click="toggleSelection(Арбуз)"
+            />
+            {{Арбуз}}
+          </label>
+          <br />
+          <hr />
+          <label ng-repeat="Слива in fruits">
+            <input
+              type="checkbox"
+              name="selectedFruits[]"
+              value="{{Слива}}"
+              ng-checked="selection.indexOf(Слива) > -1"
+              ng-click="toggleSelection(Слива)"
+            />
+            {{Слива}}
+          </label>
+          <br />
+          <hr />
+          <label ng-repeat="Картошка in fruits">
+            <input
+              type="checkbox"
+              name="selectedFruits[]"
+              value="{{Картошка}}"
+              ng-checked="selection.indexOf(Картошка) > -1"
+              ng-click="toggleSelection(Картошка)"
+            />
+            {{Картошка}}
+          </label>
+        </ol>
+        <input type="submit" value="Send form" />
+      </fieldset>
+    </form>
+  </body>
 </html>
