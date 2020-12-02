@@ -1,5 +1,11 @@
+"use strict"
+let n = 10;
 
-for(let i=0 ; i <= 10 ; i++) {
-    if (i % 2 !== 0) continue;
-    alert(i) ;
-}
+nextPrime:
+for (let i = 2; i <= n; i++) { // Для всех i...
+
+  for (let j = 2; j < i; j++) { // проверить, делится ли число..
+    if (i % j == 0) continue nextPrime; // не подходит, берём следующее
+  }
+
+  alert( i ); // простое число
