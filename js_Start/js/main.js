@@ -1,11 +1,22 @@
-"use strict"
-let n = 10;
+let title = document.getElementById ('title');
 
-nextPrime:
-for (let i = 2; i <= n; i++) { // Для всех i...
+setTimeout (() => {
+    addStylesTo (title)
 
-  for (let j = 2; j < i; j++) { // проверить, делится ли число..
-    if (i % j == 0) continue nextPrime; // не подходит, берём следующее
-  }
+}, 1500)
 
-  alert( i ); // простое число
+function addStylesTo (node) {
+node.style.transform = 1000 ;
+    node.textContent = ' Changed by Java Script!'
+node.style.textAlign = 'center'
+node.style.backgroundColor = 'orange';
+
+}
+
+title.onclick = () => {
+    if (title.style.backgroundColor === 'orange') {
+title.style.backgroundColor = 'green'
+} else  {title.style.backgroundColor = 'orange' }
+
+
+}
